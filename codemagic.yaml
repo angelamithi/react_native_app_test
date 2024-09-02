@@ -13,6 +13,7 @@ workflows:
             - google_play # <-- (Includes GCLOUD_SERVICE_ACCOUNT_CREDENTIALS <-- Put your google-services.json)
           vars:
             PACKAGE_NAME: "com.domain.myapp" # <-- Put your package name here e.g. com.domain.myapp
+            PUBLISH_TO_GOOGLE_PLAY: false    
           node: v19.7.0
         scripts:
             - name: Install npm dependencies
@@ -39,12 +40,13 @@ workflows:
         publishing:
           email:
             recipients:
-              - user_1@example.com
-              - user_2@example.com
+               - angelamithi@gmail.com
+               - angelwmithi@gmail.com
             notify:
               success: true     # To not receive a notification when a build succeeds
-              failure: false    # To not receive a notification when a build fails
+              failure: true    # To not receive a notification when a build fails
           google_play:
+            when: '"$PUBLISH_TO_GOOGLE_PLAY" == "true"'
             credentials: $GCLOUD_SERVICE_ACCOUNT_CREDENTIALS
             track: alpha   # Any default or custom track that is not in ‘draft’ status
     react-native-ios:
@@ -93,8 +95,8 @@ workflows:
         publishing:
           email:
             recipients:
-              - user_1@example.com
-              - user_2@example.com
+              - angelamithi@gmail.com
+              - angelwmithi@gmail.com
             notify:
               success: true
               failure: false
