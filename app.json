@@ -1,0 +1,10 @@
+{
+  "name": "cmreactnative",
+  "displayName": "cmreactnative",
+  "android": {
+    "package": "com.domain.myapp"
+  },
+  "ios": {
+    "bundleIdentifier": "com.domain.myapp"
+  }
+}
