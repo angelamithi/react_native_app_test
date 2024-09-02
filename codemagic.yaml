@@ -12,7 +12,7 @@ workflows:
           groups:
             - google_play # <-- (Includes GCLOUD_SERVICE_ACCOUNT_CREDENTIALS <-- Put your google-services.json)
           vars:
-            PACKAGE_NAME: "io.codemagic.sample.reactnative" # <-- Put your package name here e.g. com.domain.myapp
+            PACKAGE_NAME: "com.domain.myapp" # <-- Put your package name here e.g. com.domain.myapp
           node: v19.7.0
         scripts:
             - name: Install npm dependencies
